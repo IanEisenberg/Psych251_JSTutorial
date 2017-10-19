@@ -6,6 +6,7 @@
     <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
     <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
     <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    <script src="javascript/mmturkey.js"></script>
   </head>
   <body>
   </body>
@@ -115,8 +116,9 @@
   jsPsych.init({
     timeline: timeline,
     on_finish: function() {
-      jsPsych.data.displayData();
+      opener.turk.submit(jsPsych.data.getData())
     }
   });
 </script>
 </html>
+
